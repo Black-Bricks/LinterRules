@@ -121,6 +121,7 @@ opt_in_rules: # some rules are turned off by default, so you need to opt-in
 - no_fallthrough_only
 - no_grouping_extension
 - no_space_in_method_call
+- no_magic_numbers
 - notification_center_detachment
 - nslocalizedstring_key
 - nslocalizedstring_require_bundle
@@ -223,7 +224,8 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
 
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
-line_length: 180
+line_length:
+  error: 120
 
 force_unwrapping:
   severity: error
@@ -235,8 +237,10 @@ trailing_whitespace:
   ignores_empty_lines: true
 
 closure_body_length:
-  warning: 30
-  error: 100
+  error: 60
+  
+file_length:
+  error: 600
 
 identifier_name:
   min_length: 2
@@ -249,3 +253,9 @@ identifier_name:
     - dx
     - dy
     - id
+
+function_body_length:
+  error: 80
+
+type_body_length:
+  error: 240
