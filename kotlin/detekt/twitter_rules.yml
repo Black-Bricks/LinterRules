@@ -1,6 +1,6 @@
 TwitterCompose:
   CompositionLocalAllowlist:
-    active: true
+    active: false
     # You can optionally define a list of CompositionLocals that are allowed here
     # allowedCompositionLocals: LocalSomething,LocalSomethingElse
   CompositionLocalNaming:
@@ -12,7 +12,7 @@ TwitterCompose:
   ModifierComposable:
     active: true
   ModifierMissing:
-    active: true
+    active: false
   ModifierReused:
     active: true
   ModifierWithoutDefault:
