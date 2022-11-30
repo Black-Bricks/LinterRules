@@ -122,12 +122,13 @@ complexity:
     threshold: 60
     ignoreAnnotated: [ 'Composable' ]
   LongParameterList:
-    active: false
+    active: true
     functionThreshold: 6
     constructorThreshold: 7
     ignoreDefaultParameters: true
     ignoreDataClasses: true
     ignoreAnnotatedParameter: [ 'DrawableRes', 'Composable' ]
+    ignoreAnnotated: [ 'Composable' ]
   MethodOverloading:
     active: false
     threshold: 6
