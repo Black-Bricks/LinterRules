@@ -16,9 +16,9 @@ TwitterCompose:
   ModifierReused:
     active: true
   ModifierWithoutDefault:
-    active: false
+    active: true
   MultipleEmitters:
-    active: false
+    active: true
     # You can optionally add your own composables here
     # contentEmitters: MyComposable,MyOtherComposable
   MutableParams:
@@ -38,7 +38,7 @@ TwitterCompose:
   RememberMissing:
     active: true
   UnstableCollections:
-    active: false
+    active: true
   ViewModelForwarding:
     active: true
   ViewModelInjection:

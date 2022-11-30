@@ -96,7 +96,7 @@ complexity:
     includeStaticDeclarations: false
     includePrivateDeclarations: false
   ComplexMethod:
-    active: false
+    active: true
     threshold: 15
     ignoreSingleWhenExpression: false
     ignoreSimpleWhenEntries: false
@@ -115,18 +115,18 @@ complexity:
     active: false
     ignoredLabels: [ ]
   LargeClass:
-    active: false
+    active: true
     threshold: 600
   LongMethod:
-    active: false
+    active: true
     threshold: 60
   LongParameterList:
     active: false
-    functionThreshold: 8
+    functionThreshold: 6
     constructorThreshold: 7
-    ignoreDefaultParameters: false
+    ignoreDefaultParameters: true
     ignoreDataClasses: true
-    ignoreAnnotatedParameter: [ ]
+    ignoreAnnotatedParameter: [ 'DrawableRes', 'Composable' ]
   MethodOverloading:
     active: false
     threshold: 6
@@ -156,13 +156,13 @@ complexity:
     excludeStringsWithLessThan5Characters: true
     ignoreStringsRegex: '$^'
   TooManyFunctions:
-    active: false
+    active: true
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
-    thresholdInFiles: 11
-    thresholdInClasses: 11
-    thresholdInInterfaces: 11
-    thresholdInObjects: 11
-    thresholdInEnums: 11
+    thresholdInFiles: 25
+    thresholdInClasses: 25
+    thresholdInInterfaces: 25
+    thresholdInObjects: 25
+    thresholdInEnums: 25
     ignoreDeprecated: false
     ignorePrivate: false
     ignoreOverridden: false
@@ -245,7 +245,7 @@ exceptions:
     active: true
     ignoreLabeled: false
   SwallowedException:
-    active: false
+    active: true
     ignoredExceptionTypes:
       - 'InterruptedException'
       - 'MalformedURLException'
@@ -257,7 +257,7 @@ exceptions:
   ThrowingExceptionInMain:
     active: false
   ThrowingExceptionsWithoutMessageOrCause:
-    active: false
+    active: true
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
     exceptions:
       - 'ArrayIndexOutOfBoundsException'
@@ -272,7 +272,7 @@ exceptions:
   ThrowingNewInstanceOfSameException:
     active: true
   TooGenericExceptionCaught:
-    active: false
+    active: true
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
     exceptionNames:
       - 'ArrayIndexOutOfBoundsException'
@@ -342,7 +342,7 @@ naming:
     active: true
     mustBeFirst: true
   MemberNameEqualsClassName:
-    active: false
+    active: true
     ignoreOverridden: true
   NoNameShadowing:
     active: true
@@ -561,22 +561,23 @@ style:
     active: true
     maxJumpCount: 1
   MagicNumber:
-    active: false
+    active: true
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**', '**/*.kts' ]
     ignoreNumbers:
       - '-1'
       - '0'
       - '1'
-      - '2'
-    ignoreHashCodeFunction: true
-    ignorePropertyDeclaration: true
+    ignoreHashCodeFunction: false
+    ignorePropertyDeclaration: false
     ignoreLocalVariableDeclaration: true
-    ignoreConstantDeclaration: true
-    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreConstantDeclaration: false
+    ignoreCompanionObjectPropertyDeclaration: false
     ignoreAnnotation: false
-    ignoreNamedArgument: false
+    # TODO: disable ignoreNamedArgument
+    ignoreNamedArgument: true
     ignoreEnums: false
     ignoreRanges: false
+    # TODO: disable ignoreExtensionFunctions
     ignoreExtensionFunctions: true
   MandatoryBracesIfStatements:
     active: false
@@ -586,7 +587,7 @@ style:
     active: false
     maxChainedCalls: 5
   MaxLineLength:
-    active: false
+    active: true
     maxLineLength: 120
     excludePackageStatements: true
     excludeImportStatements: true
@@ -624,8 +625,8 @@ style:
   RedundantVisibilityModifierRule:
     active: false
   ReturnCount:
-    active: false
-    max: 2
+    active: true
+    max: 3
     excludedFunctions: 'equals'
     excludeLabeled: false
     excludeReturnFromLambda: true
@@ -671,7 +672,7 @@ style:
   UnusedPrivateClass:
     active: true
   UnusedPrivateMember:
-    active: false
+    active: true
     allowedNames: '(_|ignored|expected|serialVersionUID)'
   UseAnyOrNoneInsteadOfFind:
     active: true
@@ -710,4 +711,3 @@ style:
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
     excludeImports:
       - 'java.util.*'
-      - 'androidx.compose.runtime.*'
