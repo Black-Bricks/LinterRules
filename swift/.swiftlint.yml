@@ -9,6 +9,9 @@ disabled_rules: # rule identifiers turned on by default to exclude from running
 - accessibility_label_for_image
 - file_name
 - vertical_whitespace_between_cases
+- function_default_parameter_at_end
+- todo
+- trailing_closure
 
 opt_in_rules: # some rules are turned off by default, so you need to opt-in
 - anonymous_argument_in_multiline_closure
@@ -76,7 +79,6 @@ opt_in_rules: # some rules are turned off by default, so you need to opt-in
 - force_try
 - force_unwrapping
 - function_body_length
-- function_default_parameter_at_end
 - function_parameter_count
 - generic_type_name
 - ibinspectable_in_extension
@@ -181,9 +183,7 @@ opt_in_rules: # some rules are turned off by default, so you need to opt-in
 - switch_case_on_newline
 - syntactic_sugar
 - test_case_accessibility
-- todo
 - toggle_bool
-- trailing_closure
 - trailing_comma
 - trailing_newline
 - trailing_semicolon
@@ -259,3 +259,4 @@ function_body_length:
 
 type_body_length:
   error: 240
+
